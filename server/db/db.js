@@ -4,10 +4,15 @@ const connection = require('knex')(config)
 
 module.exports = {
   getAllFood,
+  getAllFlavoursByFood,
 }
 
 function getAllFood(db = connection) {
   return db('food').select()
+}
+
+function getAllFlavoursByFood(id, db = connection) {
+  return db('flavours').join('food', 'flavours.food_id', '=', 'food.id')
 }
 
 //1. update file name
