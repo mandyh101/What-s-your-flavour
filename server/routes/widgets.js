@@ -14,3 +14,7 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
+
+//1. rename to flavours (file name)
+//2. rewrite db functions
+//3 update router methods
