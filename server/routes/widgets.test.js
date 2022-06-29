@@ -3,6 +3,10 @@ import request from 'supertest'
 import server from '../server'
 import { getWidgets } from '../db/db'
 
+//1. rename to flavours (file name)
+//2. watch test lecture on mock
+//3 rewrite tests
+
 jest.mock('../db/db')
 
 describe('GET /api/v1/widgets', () => {

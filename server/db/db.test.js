@@ -4,6 +4,10 @@ const testDb = knex(config)
 
 const db = require('./db')
 
+//1. rewatch lecture on testing db functions
+//2. update file name
+//3. rewrite files
+
 beforeAll(() => {
   return testDb.migrate.latest()
 })
