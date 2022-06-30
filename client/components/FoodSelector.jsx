@@ -7,7 +7,7 @@ export function FoodSelector(){
   useEffect(()=>{
     getFoodData()
     .then((foodData) => {
-    setFoodNames(foodData.map((food) => <li key={food.id}>{food.name}</li>)) 
+    setFoodNames(foodData.map((food) => <option key={food.id}>{food.name}</option>)) 
     })
     .catch((err)=> {
       console.log(err)
@@ -17,11 +17,8 @@ export function FoodSelector(){
 
   return(
     <div>
-      <h1>Choose your food:</h1>
-      <ul>
-        {foodNames}
-        {console.log(foodNames)}
-      </ul>
+      <label htmlFor="foodOptions">Select your food of choice:</label>
+      <select id="foodOptions" name="foodOptions">{foodNames}</select>
     </div>
   )
 }
