@@ -1,6 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import request from 'superagent'
 // eslint-disable-next-line no-unused-vars
-const widgetUrl = '/api/v1/widgets/'
+const foodUrl = '/api/v1/food/'
 
-export function getWidgets() {}
+export function getFoodData() {
+  return request
+    .get(foodUrl)
+    .then((response) => {
+      const foodData = response.body
+      console.log('food data', foodData)
+      return foodData
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
