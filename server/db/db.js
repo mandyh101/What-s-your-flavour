@@ -15,8 +15,7 @@ function getAllFlavoursByFood(id, db = connection) {
   return db('flavours').join('food', 'flavours.food_id', '=', 'food.id')
 }
 
-//1. update file name
-//2. Write  getAllFood names or getAllFood function?
+//2. Write getAllFood function
 //3. Wite a function that gets all flavours that match a food by id/food_id
 //4. write a function that gets a flavour combo by ids?
 //3. Write a function to get all flavours that match an id
