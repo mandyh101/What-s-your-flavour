@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { getFoodData } from "../apiClient";
+import DisplayFlavours from './DisplayFlavours'
 
 export function FoodSelector(){
   const [foodNames, setFoodNames] = useState([])
@@ -16,10 +17,8 @@ export function FoodSelector(){
   },[])
 
   function handleOnChange(e){
-    const foodSelected = e.target.value
-    console.log(foodSelected)
-    // setFoodSelected(foodNames.filter((food) => food === e.target.value))
-    // console.log(foodSelected)
+    const foodChoice = e.target.value
+    return <DisplayFlavours food={foodChoice}/>
   }
 
 
@@ -32,6 +31,4 @@ export function FoodSelector(){
 }
 
 //next steps =>
-//add onChange to select open tag and call handleOnChange function
-//write handleOnChange function that will set the foodSelected state
 //pass the foodSelected state to the DisplayRandomFlavourCombo component
