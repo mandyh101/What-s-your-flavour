@@ -22,3 +22,8 @@ export function FoodSelector(){
     </div>
   )
 }
+
+//next steps =>
+//add onChange to select open tag and call handleOnChange function
+//write handleOnChange function that will set the foodSelected state
+//pass the foodSelected state to the DisplayRandomFlavourCombo component
