@@ -8,6 +8,7 @@ export function getFoodData() {
     .get(foodUrl)
     .then((response) => {
       const foodData = response.body
+      console.log('food data', foodData)
       return foodData
     })
     .catch((err) => {
