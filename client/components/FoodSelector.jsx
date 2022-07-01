@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { getFoodData } from "../apiClient";
 import DisplayFlavours from './DisplayFlavours'
 
-export function FoodSelector(){
+export default function FoodSelector(){
   const [foodNames, setFoodNames] = useState([])
   // const [foodSelected, setFoodSelected] = useState([])
 
@@ -26,6 +26,8 @@ export function FoodSelector(){
     <div>
       <label htmlFor="foodOptions">Select your food of choice:</label>
       <select id="foodOptions" name="foodOptions" onChange={e => handleOnChange(e)}>{foodNames}</select>
+      <button>Let's cook!</button>
+      <button>Try another combo</button>
     </div>
   )
 }
