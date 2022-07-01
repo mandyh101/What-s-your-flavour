@@ -2,11 +2,8 @@ const knex = require('knex')
 const config = require('./knexfile').test
 const testDb = knex(config)
 
-const db = require('./db')
-
-//1. rewatch lecture on testing db functions
-//2. update file name
-//3. rewrite files
+// const db = require('./db') //import db file
+import db from './db'
 
 beforeAll(() => {
   return testDb.migrate.latest()
@@ -16,12 +13,13 @@ beforeEach(() => {
   return testDb.seed.run()
 })
 
-describe('getWidgets', () => {
-  it('returns the correct widgets array', () => {
-    return db.getWidgets(testDb).then((widgets) => {
-      expect(widgets).toHaveLength(3)
-      expect(widgets[0]).toHaveProperty('mfg')
-      expect(widgets[1].inStock).toBe(8)
+describe('getAllFood', () => {
+  test('returns an array of food data', () => {
+    expect.assertions(3)
+    return db.getAllFood(testDb).then((result) => {
+      expect(result).toHaveLength(7)
+      expect(result[0]).toHaveProperty('name')
+      expect(result[1].id).toBe(102)
     })
   })
 })
