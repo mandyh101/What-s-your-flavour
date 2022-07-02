@@ -23,11 +23,11 @@ export default function FoodSelector(){
 
 
   return(
-    <div>
+    <div id="food-selector">
       <label htmlFor="foodOptions">Select your food of choice:</label>
-      <select id="foodOptions" name="foodOptions" onChange={e => handleOnChange(e)}>{foodNames}</select>
-      <button>Let's cook!</button>
-      <button>Try another combo</button>
+      <select className="food-selector-options" id="foodOptions" name="foodOptions" onChange={e => handleOnChange(e)}>{foodNames}</select>
+      <button className="food-selector-button">Let's cook!</button>
+      <button className="food-selector-button">Try another combo</button>
     </div>
   )
 }
