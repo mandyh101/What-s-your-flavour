@@ -6,6 +6,7 @@ export default function FoodSelector(){
   const [foodNames, setFoodNames] = useState([])
   const [foodSelected, setFoodSelected] = useState([])
 
+
   useEffect(()=>{
     getFoodData()
     .then((foodData) => {
@@ -18,10 +19,9 @@ export default function FoodSelector(){
 
   function handleOnChange(e){
     setFoodSelected(e.target.value)
-    // const foodChoice = e.target.value
-    // console.log('foodchoice',foodChoice)
-    // return <DisplayFlavours food={foodChoice}/>
-  }
+ 
+    }
+
 
 
   return(
