@@ -18,6 +18,7 @@ export default function FoodSelector(){
 
   function handleOnChange(e){
     const foodChoice = e.target.value
+    console.log('foodchoice',foodChoice)
     return <DisplayFlavours food={foodChoice}/>
   }
 
