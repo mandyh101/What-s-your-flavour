@@ -1,8 +1,126 @@
-.widget-details .visible {
+/* .widget-details .visible {
   display: block;
 }
 
 .widget-details .hidden {
   display: none;
+} */
+
+* {
+  box-sizing: border-box;
+  font:inherit;
+  color:inherit;
 }
 
+body{
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+
+  color: #444
+}
+
+p{
+  max-width: 600;
+}
+
+#container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+#menu{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+/* not sure if this header style will apply without the semntic tags but it should go onthe Header component */
+header {
+  display: flex;
+  align-items:center;
+}
+
+.navigation {
+  flex-grow:1;
+}
+
+.navigation-item {
+  text-decoration: none;
+  color: #ff6663;
+  margin-left:24px;
+}
+
+.navigation-item:first-child {
+  margin-left: 0px;
+}
+
+.navigation-item-active{
+  color: #333;
+}
+
+.login-button{
+  border-color: black;
+  background: linear-gradient(to right, #c4acd7, #006D5B );
+  padding: 10px 36px;
+  border-radius: 50px;
+  color: white;
+}
+
+.main{
+  display: flex;
+}
+
+.main-content{
+  flex:1;
+  min-width: 40%;
+}
+
+.headline {
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.main-img{
+  flex:1;
+  padding-top:40px;
+  border-radius: 10px;
+  margin-left:40px; 
+}
+
+#food-selector{
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+label{
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.food-selector-options{
+  margin-right: 24px;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.food-selector-button{
+  margin-right:24px;
+}
+
+/* media queries NOT WORKING YET */
+@media screen and (max-width: 600px) {
+  .navigation {
+    align-content: flex-start;
+    width: 100%;
+  }
+}
