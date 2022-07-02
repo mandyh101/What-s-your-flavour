@@ -11,6 +11,10 @@ function getAllFood(db = connection) {
   return db('food').select()
 }
 
+// function getAllFlavourCombos(db = connection){
+//   return db('flavours').select()
+// }
+
 function getAllFlavoursByFood(foodId, db = connection) {
   console.log(foodId)
   return db('flavours')
