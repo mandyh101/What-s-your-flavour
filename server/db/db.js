@@ -19,7 +19,7 @@ function getAllFlavoursByFood(foodId, db = connection) {
   console.log(foodId)
   return db('flavours')
     .join('food', 'food.id', 'flavours.food_id')
-    .select()
+    .select('food.name', 'food.id', 'flavours.id as flavourId', 'flavour_combo')
     .where('food.id', foodId)
 }
 
