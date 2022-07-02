@@ -15,12 +15,12 @@ export function getFoodData() {
     })
 }
 
-export function getAllFlavourCombos(id) {
+export function getAllFlavourCombos(foodId) {
   return request
-    .get(`foodUrl${id}`)
+    .get(foodUrl + foodId)
     .then((response) => {
       const flavoursByFood = response.body
-      return flavoursByFood
+      console.log(flavoursByFood)
     })
     .catch((err) => {
       console.log(err)
