@@ -8,18 +8,18 @@ function DisplayFlavour(props) {
   const [foodObj, setFoodObj] = useState({})
   console.log('food', foodselected)
   
-  // useEffect(()=>{
+  useEffect(()=>{
     getFoodData()
     .then((foodData) => {
       setFoodObj(foodData.find((food) => food.name === foodselected))
-      return foodObj
+      console.log(foodObj) 
     }).then ((foodObj) => {
       displayFlavourCombo(foodObj)
     })
     .catch((err)=> {
       console.log(err)
     })
-  // }, [])
+  }, [])
 
   function displayFlavourCombo(foodObj){
   const foodId = String(foodObj.id)
@@ -36,9 +36,6 @@ function DisplayFlavour(props) {
     //map through the results 
     //return a list of flavour combos
   
-
-  
-
 
   return ( 
   <>
