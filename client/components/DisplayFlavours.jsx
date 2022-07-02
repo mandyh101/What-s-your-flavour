@@ -5,19 +5,20 @@ import FoodSelector from "./FoodSelector";
 
 function DisplayFlavour(props) {
   const foodselected = props.food
-  console.log('foodselected' , foodselected)
+  const [foodObj, setFoodObj] = useState({})
+  console.log('food', foodselected)
   // const [flavourCombo, setFlavourCombo] = useState([])
-
-  useEffect(()=>{
     getFoodData()
     .then((foodData) => {
-    let foodObj = foodData.find((food) => food.name === props.food)
-    console.log(props)
+      setFoodObj(foodData.find((food) => food.name === props.food))
     })
+    //function to call apiClient with foodObj.id
+    //map through the results 
+    //return a list of flavour combos
     .catch((err)=> {
       console.log(err)
     })
-  },[])
+  
   
 
 
