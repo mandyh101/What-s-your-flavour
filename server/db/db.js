@@ -11,8 +11,12 @@ function getAllFood(db = connection) {
   return db('food').select()
 }
 
-function getAllFlavoursByFood(id, db = connection) {
-  return db('flavours').join('food', 'flavours.food_id', '=', 'food.id')
+function getAllFlavoursByFood(foodId, db = connection) {
+  console.log(foodId)
+  return db('flavours')
+    .join('food', 'food.id', 'flavours.food_id')
+    .select()
+    .where('food.id', foodId)
 }
 
 //2. Write getAllFood function
