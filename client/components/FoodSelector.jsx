@@ -4,7 +4,7 @@ import DisplayFlavours from './DisplayFlavours'
 
 export default function FoodSelector(){
   const [foodNames, setFoodNames] = useState([])
-  // const [foodSelected, setFoodSelected] = useState([])
+  const [foodSelected, setFoodSelected] = useState([])
 
   useEffect(()=>{
     getFoodData()
@@ -17,9 +17,10 @@ export default function FoodSelector(){
   },[])
 
   function handleOnChange(e){
-    const foodChoice = e.target.value
-    console.log('foodchoice',foodChoice)
-    return <DisplayFlavours food={foodChoice}/>
+    setFoodSelected(e.target.value)
+    // const foodChoice = e.target.value
+    // console.log('foodchoice',foodChoice)
+    // return <DisplayFlavours food={foodChoice}/>
   }
 
 
@@ -29,6 +30,7 @@ export default function FoodSelector(){
       <select className="food-selector-options" id="foodOptions" name="foodOptions" onChange={e => handleOnChange(e)}>{foodNames}</select>
       <button className="food-selector-button">Let's cook!</button>
       <button className="food-selector-button">Try another combo</button>
+      <DisplayFlavours food={foodSelected}/>
     </div>
   )
 }
