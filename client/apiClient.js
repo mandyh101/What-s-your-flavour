@@ -14,3 +14,15 @@ export function getFoodData() {
       console.log(err)
     })
 }
+
+export function getAllFlavourCombos(foodId) {
+  return request
+    .get(foodUrl + foodId)
+    .then((response) => {
+      const flavoursByFood = response.body
+      return flavoursByFood
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
