@@ -20,7 +20,7 @@ export function getAllFlavourCombos(foodId) {
     .get(foodUrl + foodId)
     .then((response) => {
       const flavoursByFood = response.body
-      console.log(flavoursByFood)
+      return flavoursByFood
     })
     .catch((err) => {
       console.log(err)
