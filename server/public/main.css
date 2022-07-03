@@ -1,10 +1,3 @@
-/* .widget-details .visible {
-  display: block;
-}
-
-.widget-details .hidden {
-  display: none;
-} */
 
 * {
   box-sizing: border-box;
@@ -153,14 +146,34 @@ label{
   margin: 10px 0px;
 }
 
-/* .food-selector-button{
-  margin-right:24px;
-} */
 
-/* media queries NOT WORKING YET */
-@media screen and (max-width: 600px) {
-  .navigation {
-    align-content: flex-start;
-    width: 100%;
+@media (max-width: 600px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
   }
+
+  #container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      text-align: center;
+  }
+
+  #menu{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .main .main-content .main-img{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+
 }
