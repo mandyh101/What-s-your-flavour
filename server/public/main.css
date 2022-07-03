@@ -10,6 +10,7 @@
   box-sizing: border-box;
   font:inherit;
   color:inherit;
+  background-color: #fc7a57;
 }
 
 body{
@@ -48,8 +49,14 @@ header {
 
 .navigation-item {
   text-decoration: none;
-  color: #ff6663;
+  color: #eefc57;
   margin-left:24px;
+}
+
+.navigation-item:hover{
+  outline: 3px solid #eefc57;
+  padding:5px;
+  border: 2px solid white
 }
 
 .navigation-item:first-child {
@@ -61,11 +68,16 @@ header {
 }
 
 .login-button{
-  border-color: black;
-  background: linear-gradient(to right, #c4acd7, #006D5B );
+  border: 5px solid white;
+  background: linear-gradient(to right, #eefc57, #fc7a57 );
   padding: 10px 36px;
   border-radius: 50px;
   color: white;
+}
+
+.login-button:hover{
+  outline: 3px solid #eefc57;
+  border: 2px solid white;
 }
 
 .main{
@@ -81,12 +93,14 @@ header {
   font-size: 70px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #eefc57;
 }
 
 .tagline {
   font-size: 35px;
   font-weight: 400;
   margin-top: 20px;
+  color: #5e5b52;
 }
 
 .main-img{
@@ -96,10 +110,14 @@ header {
   margin-left:40px; 
 }
 
+.main-img img{
+  border-radius: 20px;
+}
+
 #food-selector{
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: 40px;
 }
 
 label{
@@ -108,14 +126,35 @@ label{
 }
 
 .food-selector-options{
+  border-color: #5e5b52;
+  background-color: #5e5b52;
   margin-right: 24px;
   margin-left: 10px;
   font-size: 24px;
+  color: #eefc57
 }
 
-.food-selector-button{
-  margin-right:24px;
+.food-selector-options:focus{
+  outline: 3px solid #eefc57;
+  border: 2px solid white;
+  padding:5px;
 }
+
+#flavour-display{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#flavour-display li{
+  font-size: 24px;
+  list-style: none;
+  margin: 10px 0px;
+}
+
+/* .food-selector-button{
+  margin-right:24px;
+} */
 
 /* media queries NOT WORKING YET */
 @media screen and (max-width: 600px) {
