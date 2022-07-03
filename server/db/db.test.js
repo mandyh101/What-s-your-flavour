@@ -26,11 +26,12 @@ describe('getAllFood', () => {
 
 describe('getAllFlavoursByFood', () => {
   test('returns an array of flavours that match a selected food', () => {
-    expect.assertions(2)
+    expect.assertions(3)
     const foodId = 107
     return db.getAllFlavoursByFood(foodId, testDb).then((flavours) => {
       expect(flavours).toHaveLength(3)
       expect(flavours[2]).toHaveProperty('flavour_combo')
+      expect(flavours[0].id).toBe(foodId)
     })
   })
 })
