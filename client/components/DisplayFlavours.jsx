@@ -22,7 +22,6 @@ function DisplayFlavour({food}) {
       const flavoursArr = flavourCombos.map((item) => (item.flavour_combo))
       return flavoursArr
     }).then((flavoursArr) => {
-      console.log(flavoursArr)
       return setRandomFlavour(flavoursArr[Math.floor(Math.random()*flavoursArr.length)])
     })
     .catch((err)=> {
@@ -33,8 +32,11 @@ function DisplayFlavour({food}) {
 
 
   return ( 
+    //div id is flavour display
     <>
       <p>{randomFlavour}</p>
+      <button className="food-selector-button">Let's cook!</button>
+      <button className="food-selector-button">Try another combo</button>
     </>
   );
 }
