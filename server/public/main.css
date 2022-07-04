@@ -140,10 +140,25 @@ label{
   margin-top: 20px;
 }
 
-#flavour-display li{
+#flavour-display p{
+  display: flex;
   font-size: 24px;
-  list-style: none;
+  font-style: italic;
   margin: 10px 0px;
+}
+
+.choose-option{
+ display: flex;
+ justify-content: center;
+}
+
+.choose-option button{
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  color: #fc7a57;
+  padding:10px;
+  margin:10px;
 }
 
 

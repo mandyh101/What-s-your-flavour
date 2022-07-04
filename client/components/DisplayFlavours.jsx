@@ -4,9 +4,10 @@ import { getFoodData, getAllFlavourCombos } from "../apiClient";
 
 function DisplayFlavour({food}) {
   console.log({food})
-  // const foodselected = props.food
+  //an array of flavour combination objects thaat match the food - might not need
   const [combos, setCombos] = useState([])
-  // console.log('food', foodselected)
+  //an array of flavour combination objects thaat match the food - might not need
+  const [randomFlavour, setRandomFlavour] = useState([])
   
   useEffect(()=>{
     getFoodData()
@@ -17,22 +18,29 @@ function DisplayFlavour({food}) {
       const foodId = String(obj.id)
       return getAllFlavourCombos(foodId)
     }).then ((flavourCombos) => {
-      console.log('combos' , flavourCombos)
       setCombos(flavourCombos)
-      console.log('flavs', combos)
+      const flavoursArr = flavourCombos.map((item) => (item.flavour_combo))
+      return flavoursArr
+    }).then((flavoursArr) => {
+      return setRandomFlavour(flavoursArr[Math.floor(Math.random()*flavoursArr.length)])
     })
     .catch((err)=> {
       console.log(err)
     })
   }, [food])
-
+  
 
 
   return ( 
-  <>
-  <ul>{combos.map(item => <li key={item.FlavourId}>{item.flavour_combo}</li>)}</ul>
-  </>
-   );
+    //div id is flavour display
+    <>
+      <p>{randomFlavour}</p>
+      <div className="choose-option">
+        <button>Let's cook!</button>
+        <button>Try another combo</button>
+      </div>
+    </>
+  );
 }
 
 
