@@ -4,8 +4,10 @@ import { getFoodData, getAllFlavourCombos } from "../apiClient";
 
 function DisplayFlavour({food}) {
   console.log({food})
+  //an array of flavour combination objects thaat match the food - might not need
   const [combos, setCombos] = useState([])
-  const [randomFlavour, setRandomFlavour] = useState('')
+  //an array of flavour combination objects thaat match the food - might not need
+  const [randomFlavour, setRandomFlavour] = useState([])
   
   useEffect(()=>{
     getFoodData()
@@ -20,26 +22,21 @@ function DisplayFlavour({food}) {
       const flavoursArr = flavourCombos.map((item) => (item.flavour_combo))
       return flavoursArr
     }).then((flavoursArr) => {
-      setRandomFlavour(Math.floor(Math.random()*flavoursArr.length))
-      console.log('array', flavoursArr)
-      console.log('flav to display' , randomFlavour)
+      console.log(flavoursArr)
+      return setRandomFlavour(flavoursArr[Math.floor(Math.random()*flavoursArr.length)])
     })
-
     .catch((err)=> {
       console.log(err)
     })
   }, [food])
-
-  // const flavoursArr = combos.map((item) => (item.flavour_combo))
-  // setRandomFlavour(Math.floor(Math.random()*flavoursArr.length))
+  
 
 
   return ( 
-  <>
-  {/* <p>{randomFlavour}</p> */}
-  {/* <ul>{combos.map(item => <li key={item.FlavourId}>{item.flavour_combo}</li>)}</ul> */}
-  </>
-   );
+    <>
+      <p>{randomFlavour}</p>
+    </>
+  );
 }
 
 
