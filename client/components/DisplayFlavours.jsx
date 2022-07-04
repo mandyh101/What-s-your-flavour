@@ -35,8 +35,10 @@ function DisplayFlavour({food}) {
     //div id is flavour display
     <>
       <p>{randomFlavour}</p>
-      <button className="food-selector-button">Let's cook!</button>
-      <button className="food-selector-button">Try another combo</button>
+      <div className="choose-option">
+        <button>Let's cook!</button>
+        <button>Try another combo</button>
+      </div>
     </>
   );
 }
