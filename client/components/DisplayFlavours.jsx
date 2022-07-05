@@ -1,6 +1,7 @@
 
 import React, {useState, useEffect} from "react";
 import { getFoodData, getAllFlavourCombos } from "../apiClient";
+import RecipeApi from "./RecipeAPI";
 
 function DisplayFlavour({food}) {
   console.log({food})
@@ -29,7 +30,7 @@ function DisplayFlavour({food}) {
     })
   }, [food])
   
-  console.log('combo', combos)
+  // console.log('combo', combos)
 
   return ( 
     //div id is flavour display
@@ -42,6 +43,7 @@ function DisplayFlavour({food}) {
         only show recipe component if arraylength(state) is > 0
         recipe is passed as props */}
         <button>Try another combo</button>
+        <RecipeApi />
       </div>
     </>
   );
