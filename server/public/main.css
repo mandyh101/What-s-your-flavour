@@ -4,6 +4,7 @@
   font:inherit;
   color:inherit;
   background-color: #fc7a57;
+  border: 1px red solid
 }
 
 body{
@@ -20,8 +21,11 @@ p{
 
 #container{
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 24px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
 
 #menu{
@@ -75,6 +79,7 @@ header {
 
 .main{
   display: flex;
+  align-items: center;
 }
 
 .main-content{
@@ -103,10 +108,11 @@ header {
   margin-left:40px; 
 }
 
-.main-img img{
+/* .main-img img{
   border-radius: 20px;
   margin-top: 20px;
-}
+  max-width:100%;
+} */
 
 #food-selector{
   display: flex;
@@ -153,42 +159,61 @@ label{
 }
 
 .choose-option button{
-  display: flex;
+  display:flex;
+  align-items: center;
   background-color: white;
   border-radius: 10px;
-  color: #fc7a57;
-  padding:10px;
+  border:1px solid #eefc57;
+  display: flex;
+  padding:10px 36px;
   margin:10px;
+
+  background: -webkit-linear-gradient(
+    180dg,
+    #eefc57 0%
+    #fc7a57 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-
-@media (max-width: 600px) {
-  #app {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    text-align: center;
-  }
-
-  #container {
-      display: flex;
-      flex-direction: column;
-      padding-top: 20px;
-      text-align: center;
-  }
-
-  #menu{
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    text-align: center;
-  }
-
-  .main .main-content .main-img{
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    text-align: center;
-  }
+footer{
+  display:flex;
 
 }
+
+socials{
+  margin-right: 40px;
+
+}
+
+socials-item{
+  margin-right: 12px;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 660px) {
+ .main{
+  display: block;
+ }
+}
+
+/* @media (max-width: 600px) {
+ #menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+ }
+
+ .navigation .login-button .navigation-item {
+  flex-grow:0.5;
+  flex-wrap: wrap;
+}
+
+.main-content {
+  display:flex;
+  align-items: center;
+}
+
