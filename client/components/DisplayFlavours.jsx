@@ -34,7 +34,9 @@ function DisplayFlavour({food}) {
   return ( 
     //div id is flavour display
     <>
+    <section id="flavour-display">
       <p>{randomFlavour}</p>
+    </section>
       <div className="choose-option">
         <button>Let's cook!</button>
         {/* onClick let's cook call external API to get recipe data open the flavour API component
