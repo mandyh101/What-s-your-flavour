@@ -29,14 +29,20 @@ function DisplayFlavour({food}) {
     })
   }, [food])
   
-
+  console.log('combo', combos)
 
   return ( 
     //div id is flavour display
     <>
+    <section id="flavour-display">
       <p>{randomFlavour}</p>
+    </section>
       <div className="choose-option">
         <button>Let's cook!</button>
+        {/* onClick let's cook call external API to get recipe data open the flavour API component
+        create recipe state as empty array
+        only show recipe component if arraylength(state) is > 0
+        recipe is passed as props */}
         <button>Try another combo</button>
       </div>
     </>
