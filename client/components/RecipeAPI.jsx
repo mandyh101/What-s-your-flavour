@@ -21,7 +21,7 @@ function RecipeApi() {
     })
   }, [])
   
-    if (loading) return <div>loading!</div>
+    if (loading) return <div>Finding your recipes...</div>
     if (error) return <div>error</div>
     console.log(recipes)
     

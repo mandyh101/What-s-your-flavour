@@ -31,7 +31,7 @@ export function getAllFlavourCombos(foodId) {
 export function getRecipes() {
   return request
     .get(recipeURL)
-    .then((response) => console.log(response.body.hits))
+    .then((response) => response.body.hits)
     .catch((err) => {
       console.log(err)
     })
