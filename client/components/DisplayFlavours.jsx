@@ -5,10 +5,10 @@ import RecipeApi from "./RecipeAPI";
 
 function DisplayFlavour({food}) {
   console.log({food})
-  //an array of flavour combination objects thaat match the food - might not need
+ 
   const [combos, setCombos] = useState([])
-  //an array of flavour combination objects thaat match the food - might not need
   const [randomFlavour, setRandomFlavour] = useState([])
+  const [ingredients, setIngredients] = useState([])
   
   useEffect(()=>{
     getFoodData()
@@ -30,7 +30,16 @@ function DisplayFlavour({food}) {
     })
   }, [food])
   
-  // console.log('combo', combos)
+  function handleClick(e){
+    const ingredientsStr = e.target.value
+    const ingredientsArr = ingredientsStr.split(',')
+    setIngredients(ingredientsArr)
+    console.log('ingred',ingredients)
+    //do I need to make ingredients a state?
+    //if I pass just the flavour value, the .split doesn't work?
+    //or is there a way i need to write the function in the RecipeAPI?
+
+  }
 
   return ( 
     //div id is flavour display
@@ -39,13 +48,18 @@ function DisplayFlavour({food}) {
       <p>{randomFlavour}</p>
     </section>
       <div className="choose-option">
-        <button>Let's cook!</button>
+        <button type="submit" onClick={handleClick} value={randomFlavour}>Lets cook!</button>
         {/* onClick let's cook call external API to get recipe data open the flavour API component
         create recipe state as empty array
         only show recipe component if arraylength(state) is > 0
         recipe is passed as props */}
         <button>Try another combo</button>
-        <RecipeApi />
+        
+        {/* && logic - if button has value random flavour - call API component 
+        if (document.getElementById("input").value == 
+
+        {*/}
+        <RecipeApi ingredients={ingredients}/>
       </div>
     </>
   );
