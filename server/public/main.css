@@ -44,7 +44,7 @@ header {
 }
 
 .navigation-item {
-  font-size: 1vw;
+  font-size: 2vw;
   text-decoration: none;
   color: #eefc57;
   margin-left:24px;
@@ -120,6 +120,7 @@ header {
 #food-selector{
   display: flex;
   justify-content: center;
+  margin-bottom: 200px;
 }
 
 #food-options{
@@ -165,6 +166,7 @@ label{
 .choose-option{
  display: flex;
  justify-content: center;
+ margin-bottom: 200px;
 }
 
 .choose-option button{

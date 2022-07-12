@@ -65,9 +65,10 @@
   },
   "dependencies": {
     "@babel/register": "^7.13.14",
-    "sqlite3": "^5.0.8",
+    "dotenv": "^16.0.1",
     "express": "^4.17.2",
-    "knex": "^2.1.0"
+    "knex": "^2.1.0",
+    "sqlite3": "^5.0.8"
   },
   "prettier": {
     "semi": false,
