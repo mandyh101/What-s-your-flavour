@@ -1,18 +1,25 @@
-import React, {useState, useEffect} from "react";
-import { getRecipes } from '../apiClient'
+import React, {useState} from "react";
+import { fetchRecipesWithIngredients} from '../apiClient'
 
 
 function RecipeApi(props) {
-  const ingredients = props.ingredients
-  console.log(ingredients)
-  
-  const [recipes, setRecipes] = useState(null)
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  const food = props.food
+  console.log(ingredients, food)
+  
+  const [ingredients, setIngredients] = useState([])
+  const [recipes, setRecipes] = useState([])
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+
+  function handleClick(e){
+    const ingredientsStr = e.target.value
+    const ingredientsArr = ingredientsStr.split(',')
+    setIngredients(ingredientsArr)
+    console.log('ingred',ingredients)
     setLoading(true)
-    getRecipes()
+    fetchRecipesWithIngredients(food)//TODO add ingredients string
     .then((res) => {
       setRecipes(res)
     })
@@ -22,15 +29,21 @@ function RecipeApi(props) {
     .catch(() => {
       setError(true)
     })
-  }, [])
+
+  }
   
-    if (loading) return <div>Finding your recipes...</div>
-    if (error) return <div>error</div>
-    console.log(recipes)
-    
+  if (loading) return <div>Finding your recipes...</div>
+  
+  if (error) return <div>error</div>
+
+  console.log(recipes)
+
   return (  
     <div>
-
+       <button type="submit" onClick={handleClick} value={props.randomFlavour}>Lets cook!</button>
+       <ul>
+        {recipes.map((recipe, i) => {return <li key={i}>{recipe.recipe.label}</li>})}
+       </ul>
     </div>
   );
 }
