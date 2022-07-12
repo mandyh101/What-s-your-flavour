@@ -36,3 +36,14 @@ export function getRecipes() {
       console.log(err)
     })
 }
+
+//TODO function that fetches recipes from external API
+export function fetchRecipesWithIngredients(food) {
+  return request
+    .post(recipeURL)
+    .send({ food })
+    .then((response) => response.body)
+    .catch((err) => {
+      console.log(err)
+    })
+}
