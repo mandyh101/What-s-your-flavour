@@ -1,5 +1,4 @@
-# The Wonderful World of Widgets
-
+# What's your flavour!
 This is a starter project to illustrate React components consuming a web API.
 
 
