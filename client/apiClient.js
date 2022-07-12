@@ -28,16 +28,6 @@ export function getAllFlavourCombos(foodId) {
     })
 }
 
-export function getRecipes() {
-  return request
-    .get(recipeURL)
-    .then((response) => response.body.hits)
-    .catch((err) => {
-      console.log(err)
-    })
-}
-
-//TODO function that fetches recipes from external API
 export function fetchRecipesWithIngredients(food) {
   return request
     .post(recipeURL)
@@ -47,3 +37,13 @@ export function fetchRecipesWithIngredients(food) {
       console.log(err)
     })
 }
+
+//hardcoded test function - not required
+// export function getRecipes() {
+//   return request
+//     .get(recipeURL)
+//     .then((response) => response.body.hits)
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }
