@@ -23,6 +23,6 @@ You'll be provided with a combination of herbs and spices to use to enhance the 
 Don't like what you see? Simply hit the button to try another flavour combination!
 
 ## Next Steps
-[ ] complete the api 
+[ ] complete the api filter - will this go to a new page?
 [ ] build about page 
 
