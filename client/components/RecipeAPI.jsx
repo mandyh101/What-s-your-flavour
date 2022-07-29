@@ -5,7 +5,7 @@ import { fetchRecipesWithIngredients} from '../apiClient'
 function RecipeApi(props) {
 
   const food = props.food
-  console.log(ingredients, food)
+  console.log(ingredients, food) //Keeping console.logs while I work on fixing the bug where the ingredients are not passing from DisplayFlavours
   
   const [ingredients, setIngredients] = useState([])
   const [recipes, setRecipes] = useState([])
