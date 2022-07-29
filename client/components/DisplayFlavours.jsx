@@ -5,7 +5,9 @@ import RecipeApi from "./RecipeAPI";
 
 function DisplayFlavour({food}) {
  
+  //sets the array of different flavour combos based on food item selected
   const [combos, setCombos] = useState([])
+  //randomly selects one flavour combo from the combos state
   const [randomFlavour, setRandomFlavour] = useState([])
   
   

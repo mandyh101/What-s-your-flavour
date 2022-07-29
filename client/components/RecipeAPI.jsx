@@ -19,7 +19,7 @@ function RecipeApi(props) {
     setIngredients(ingredientsArr)
     console.log('ingred',ingredients)
     setLoading(true)
-    fetchRecipesWithIngredients(food)//TODO add ingredients string
+    fetchRecipesWithIngredients(food)//TODO add ingredients string as well as food
     .then((res) => {
       setRecipes(res)
     })
