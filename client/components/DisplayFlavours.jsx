@@ -4,7 +4,6 @@ import { getFoodData, getAllFlavourCombos } from "../apiClient";
 import RecipeApi from "./RecipeAPI";
 
 function DisplayFlavour({food}) {
-  console.log({food})
  
   const [combos, setCombos] = useState([])
   const [randomFlavour, setRandomFlavour] = useState([])
@@ -33,19 +32,11 @@ function DisplayFlavour({food}) {
 
 
   return ( 
-    //div id is flavour display
     <>
     <section id="flavour-display">
       <p>{randomFlavour}</p>
     </section>
       <div className="choose-option">
-       
-        <button>Try another combo</button>
-        
-        {/* && logic - if button has value random flavour - call API component 
-        if (document.getElementById("input").value == 
-
-        {*/}
         <RecipeApi randomFlavour={randomFlavour} food={food}/>
       </div>
     </>

@@ -39,11 +39,18 @@ function RecipeApi(props) {
   console.log(recipes)
 
   return (  
-    <div>
+    <div className="choose-option">
        <button type="submit" onClick={handleClick} value={props.randomFlavour}>Lets cook!</button>
+       {/* TODO style up the recipe list output */}
        <ul>
         {recipes.map((recipe, i) => {return <li key={i}>{recipe.recipe.label}</li>})}
        </ul>
+       <button>Try another combo</button>
+        
+        {/* TODO add conditional logic - if button has value random flavour - call API component 
+        if (document.getElementById("input").value == 
+
+        {*/}
     </div>
   );
 }
