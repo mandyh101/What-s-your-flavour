@@ -36,7 +36,7 @@ function DisplayFlavour({food}) {
     <section id="flavour-display">
       <p>{randomFlavour}</p>
     </section>
-      <div className="choose-option">
+      <div>
         <RecipeApi randomFlavour={randomFlavour} food={food}/>
       </div>
     </>
